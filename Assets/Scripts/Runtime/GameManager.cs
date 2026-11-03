@@ -270,7 +270,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.6f);
         if (ui != null)
         {
-            yield return ui.FadeTo(1f, 0.6f);
+            // Keep a sliver of the grove behind the death words.
+            yield return ui.FadeTo(0.82f, 0.6f);
             ui.ShowMessage("The dusk takes me.", 4f);
             ui.ShowPrompt("R   rise again");
         }

@@ -332,6 +332,15 @@ public class PlayerController : MonoBehaviour
         ApplyDamage(1, transform.position.x + 1f, true);
     }
 
+    public void DebugHeal()
+    {
+        if (dead) return;
+        health = maxHealth;
+        iframeTimer = 0f;
+        if (bodyRenderer != null) bodyRenderer.color = Color.white;
+        if (UIManager.Instance != null) UIManager.Instance.SetHealth(health, maxHealth);
+    }
+
     public void DebugAttackNow()
     {
         if (attackTimer <= 0f) BeginAttack();

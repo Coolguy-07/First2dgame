@@ -226,6 +226,14 @@ public static class GameTest
         return "hurt hp=" + pc.Health;
     }
 
+    public static string Heal()
+    {
+        var pc = UnityEngine.Object.FindAnyObjectByType<PlayerController>();
+        if (pc == null) return "no player";
+        pc.DebugHeal();
+        return "healed hp=" + pc.Health;
+    }
+
     public static string AttackNow()
     {
         var pc = UnityEngine.Object.FindAnyObjectByType<PlayerController>();

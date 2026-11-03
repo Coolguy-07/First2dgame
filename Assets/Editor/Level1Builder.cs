@@ -1105,6 +1105,11 @@ public static class Level1Builder
         Stretch(fade.rectTransform);
         fade.transform.SetAsLastSibling();
 
+        // Messages and the restart prompt must stay readable on the death
+        // veil, so they sit above the fade layer.
+        message.transform.SetAsLastSibling();
+        prompt.transform.SetAsLastSibling();
+
         ui.hearts = heartImages.ToArray();
         ui.messageText = message;
         ui.promptText = prompt;
